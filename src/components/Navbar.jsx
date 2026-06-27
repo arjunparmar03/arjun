@@ -103,7 +103,7 @@ const Navbar = () => {
         ref={navbarRef}
         animate={{
           width: isOpen ? 'min(92vw, 440px)' : 'min(92vw, 320px)',
-          borderRadius: isOpen ? 32 : 9999,
+          borderRadius: isOpen ? 24 : 20,
           paddingTop: isOpen ? 28 : 8,
           paddingBottom: isOpen ? 28 : 8,
           paddingLeft: isOpen ? 32 : 32,
