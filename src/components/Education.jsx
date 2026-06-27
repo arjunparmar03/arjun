@@ -50,8 +50,8 @@ const Education = () => {
           <div className="w-16 h-1 bg-purpleAccent mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* 3D Flip Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* Academic Background List (Majd services layout style) */}
+        <div className="max-w-4xl mx-auto flex flex-col mt-12">
           {educationData.map((item, idx) => (
             <motion.div
               key={idx}
@@ -59,61 +59,29 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: '-100px' }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
-              className="flip-card h-64 w-full"
+              className="border-b border-zinc-200/80 last:border-b-0 pb-10 mb-10 last:pb-0 last:mb-0 group cursor-pointer text-left w-full"
             >
-              <div className="flip-card-inner w-full h-full cursor-pointer">
+              <motion.div
+                whileHover={{ x: 12 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                className="space-y-3"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-[#0D0D0D] font-sans tracking-tight group-hover:text-purpleAccent transition-colors duration-300">
+                    {item.degree}
+                  </h3>
+                </div>
                 
-                {/* FRONT FACE */}
-                <div className="flip-card-front flex flex-col justify-between p-8 text-left">
-                  <div className="flex items-start justify-between">
-                    {/* Glowing Icon Wrapper */}
-                    <div 
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center border bg-zinc-50 border-purpleAccent/25 text-purpleAccent shadow-[0_4px_12px_rgba(124,90,237,0.08)]"
-                    >
-                      <i className={`fa-solid ${item.icon} text-2xl`} />
-                    </div>
-
-                    {/* Date Badge */}
-                    <span 
-                      className="text-[10px] md:text-xs font-mono font-bold px-3 py-1 rounded-full border bg-zinc-100/50 text-purpleAccent border-purpleAccent/20"
-                    >
-                      {item.date}
-                    </span>
-                  </div>
-
-                  <div className="space-y-2 mt-4">
-                    <span className="text-zinc-500 text-xs font-mono tracking-wider block uppercase">
-                      {item.institution}
-                    </span>
-                    <h3 className="text-lg md:text-xl font-bold text-charcoal font-sans tracking-tight">
-                      {item.degree}
-                    </h3>
-                  </div>
-
-                  {/* Hover visual cue */}
-                  <div className="mt-4 flex items-center gap-1.5 text-[10px] text-zinc-400 font-mono">
-                    <span>Hover to flip</span>
-                    <i className="fa-solid fa-arrows-rotate animate-spin-slow" />
-                  </div>
+                <div className="text-xs md:text-sm font-semibold tracking-wider text-zinc-400 uppercase font-sans flex flex-wrap items-center gap-2 select-none">
+                  <span>{item.institution}</span>
+                  <span className="text-zinc-300 font-normal">•</span>
+                  <span>{item.date}</span>
                 </div>
 
-                {/* BACK FACE */}
-                <div className="flip-card-back text-left">
-                  <div className="space-y-4 w-full">
-                    <span className="text-xs uppercase tracking-widest text-purpleAccent font-semibold font-mono flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purpleAccent" />
-                      About The Course
-                    </span>
-                    <h4 className="text-base font-bold text-charcoal font-sans border-b border-zinc-200/60 pb-2">
-                      {item.degree}
-                    </h4>
-                    <p className="text-zinc-600 text-sm leading-relaxed font-sans">
-                      {item.details}
-                    </p>
-                  </div>
-                </div>
-
-              </div>
+                <p className="text-zinc-500 text-sm md:text-base leading-relaxed font-sans max-w-3xl">
+                  {item.details}
+                </p>
+              </motion.div>
             </motion.div>
           ))}
         </div>

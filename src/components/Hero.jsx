@@ -262,18 +262,17 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             className="text-center w-full mb-6"
           >
-            <h1 className="relative font-syne font-extrabold text-[9vw] tracking-tighter leading-[0.9] select-none uppercase">
+            <h1 className="relative font-syne font-extrabold text-[9vw] tracking-tighter leading-none select-none uppercase flex flex-col items-center gap-2">
               {/* Star decoration - left of SOFTWARE */}
-              <span className="relative inline-flex items-center justify-center">
+              <span className="relative inline-flex items-center">
                 <span className="absolute -left-[8vw] -top-[1.5vw] w-[7vw] h-[7vw] select-none flex items-center justify-center pointer-events-auto">
                   <ChromeStar />
                 </span>
                 SOFTWARE
               </span>
-              <br />
-              <span className="relative inline-flex items-center justify-center">
+              {/* Lightning decoration - right of ENGINEER */}
+              <span className="relative inline-flex items-center mt-1">
                 ENGINEER
-                {/* Lightning decoration - right of ENGINEER */}
                 <span className="absolute -right-[8vw] bottom-[0vw] w-[7vw] h-[7vw] select-none flex items-center justify-center pointer-events-auto">
                   <ChromeLightning />
                 </span>
