@@ -28,12 +28,6 @@ const IdeaToLaunch = () => {
   });
 
   // Use a smooth spring to eliminate any scroll jitter and ensure premium performance
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
   const words = paragraphText.split(" ");
 
   // Define active range for the progressive reveal
@@ -54,7 +48,7 @@ const IdeaToLaunch = () => {
               // Make words overlap slightly for smooth continuous animation flow
               const end = Math.min(endThreshold, start + step * 3.5);
               return (
-                <Word key={i} progress={smoothProgress} range={[start, end]}>
+                <Word key={i} progress={scrollYProgress} range={[start, end]}>
                   {word}
                 </Word>
               );

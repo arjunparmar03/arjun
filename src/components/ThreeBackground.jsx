@@ -99,6 +99,7 @@ const ThreeBackground = () => {
 
     // Animation Loop
     const clock = new THREE.Clock();
+    let animationFrameId;
 
     const animate = () => {
       const elapsedTime = clock.getElapsedTime();
@@ -116,13 +117,14 @@ const ThreeBackground = () => {
       particles.position.y = -targetY * 1.5;
 
       renderer.render(scene, camera);
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
     animate();
 
     // Clean up resources on unmount
     return () => {
+      cancelAnimationFrame(animationFrameId);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
       scene.remove(particles);
