@@ -9,18 +9,11 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import IdeaToLaunch from './components/IdeaToLaunch';
+import Footer from './components/Footer';
 
 const App = () => {
   useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.05, // Linear interpolation: lower values (0.05-0.08) feel heavier, smoother, and more premium
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 0.8, // Slightly reduces scroll speed/distance per tick for a more controlled, deliberate pace
-      touchMultiplier: 1.5, // Smoother gesture multiplier for touch devices
-      syncTouch: true, // Synchronizes touch scrolling on mobile devices
-    });
+    const lenis = new Lenis();
 
     window.lenis = lenis;
 
@@ -67,37 +60,22 @@ const App = () => {
       {/* Navigation Header */}
       <Navbar />
 
-      {/* Main Sections */}
-      <main>
-        <Hero />
-        <About />
-        <IdeaToLaunch />
-        <Education />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
+      {/* Main Content wrapper - sits on top with z-index: 10 */}
+      <div className="relative z-10 bg-[#F7F5F2] shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
+        {/* Main Sections */}
+        <main>
+          <Hero />
+          <About />
+          <IdeaToLaunch />
+          <Education />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+      </div>
 
-      {/* Footer */}
-      <footer className="py-10 border-t border-zinc-200/60 bg-white/40 backdrop-blur-sm relative z-10">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-sm text-zinc-500 font-sans">
-            &copy; {new Date().getFullYear()} Arjun Parmar. All rights reserved.
-          </p>
-          <div className="flex flex-wrap items-center gap-6">
-            {['home', 'about', 'education', 'skills', 'projects', 'contact'].map((item) => (
-              <a
-                key={item}
-                href={`#${item}`}
-                onClick={(e) => handleFooterLinkClick(item, e)}
-                className="text-xs uppercase tracking-wider font-semibold text-zinc-500 hover:text-purpleAccent transition-all duration-300 capitalize"
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-        </div>
-      </footer>
+      {/* Sticky Reveal Footer sits underneath - z-index: 0 */}
+      <Footer />
     </div>
   );
 };

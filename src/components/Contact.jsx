@@ -101,96 +101,21 @@ const Contact = () => {
           <div className="w-16 h-1 bg-purpleAccent mx-auto mt-4 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto items-start">
+        <div className="max-w-2xl mx-auto">
           
-          {/* Left panel: Info & Socials */}
+          {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: '-100px' }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 space-y-6 text-left"
           >
-            <div className="p-8 border border-zinc-200/60 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-[24px] space-y-8">
-              <h3 className="text-xl font-bold text-charcoal font-syne tracking-tight">Contact Information</h3>
-              
-              <div className="space-y-6">
-                {/* Location */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-purpleAccent/10 border border-purpleAccent/20 flex items-center justify-center text-purpleAccent shrink-0">
-                    <i className="fa-solid fa-location-dot" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs text-zinc-400 uppercase tracking-widest font-semibold font-mono">Location</h4>
-                    <p className="text-zinc-600 font-sans mt-1">Bhavnagar, Gujarat, India</p>
-                  </div>
-                </div>
+            <form onSubmit={handleSubmit} className="p-8 border border-white/10 bg-[#0C0C0E] shadow-[0_12px_40px_rgba(0,0,0,0.15)] rounded-[24px] space-y-6 text-left">
 
-                {/* Email */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-purpleAccent/10 border border-purpleAccent/20 flex items-center justify-center text-purpleAccent shrink-0">
-                    <i className="fa-solid fa-envelope" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs text-zinc-400 uppercase tracking-widest font-semibold font-mono">Email</h4>
-                    <a href="mailto:arjun@optenary.tech" className="text-zinc-600 hover:text-purpleAccent transition-colors font-sans mt-1 block">
-                      arjun@optenary.tech
-                    </a>
-                  </div>
-                </div>
-
-                {/* COO Optenary info */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-purpleAccent/10 border border-purpleAccent/20 flex items-center justify-center text-purpleAccent shrink-0">
-                    <i className="fa-solid fa-briefcase" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs text-zinc-400 uppercase tracking-widest font-semibold font-mono">Company</h4>
-                    <a href="https://optenary.tech" target="_blank" rel="noreferrer" className="text-zinc-600 hover:text-purpleAccent transition-colors font-sans mt-1 block">
-                      Optenary
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Social links */}
-              <div className="pt-6 border-t border-zinc-200">
-                <h4 className="text-xs text-zinc-400 uppercase tracking-widest font-semibold font-mono mb-4">Connect With Me</h4>
-                <div className="flex items-center gap-3">
-                  <a
-                    href="https://github.com/arjunparmar03"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-zinc-500 hover:text-purpleAccent hover:border-purpleAccent/40 hover:bg-purpleAccent/5 transition-all duration-300"
-                  >
-                    <i className="fa-brands fa-github text-lg" />
-                  </a>
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-center text-zinc-500 hover:text-purpleAccent hover:border-purpleAccent/40 hover:bg-purpleAccent/5 transition-all duration-300"
-                  >
-                    <i className="fa-brands fa-linkedin text-lg" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right panel: Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: '-100px' }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="lg:col-span-7"
-          >
-            <form onSubmit={handleSubmit} className="p-8 border border-zinc-200/60 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-[24px] space-y-6 text-left">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Name */}
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-xs text-zinc-500 font-mono tracking-wider uppercase">Name</label>
+                  <label htmlFor="name" className="text-sm font-semibold text-white font-sans">Name</label>
                   <input
                     type="text"
                     id="name"
@@ -198,13 +123,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-zinc-50/50 border border-zinc-200 focus:border-purpleAccent focus:bg-white focus:shadow-[0_0_15px_rgba(124,90,237,0.08)] rounded-xl px-4 py-3 text-charcoal placeholder-zinc-400 text-sm font-sans focus:outline-none transition-all duration-300"
-                    placeholder="John Doe"
+                    className="w-full bg-[#121214] border border-white/10 focus:border-white rounded-xl px-4 py-3 text-white placeholder-zinc-500 text-sm font-sans focus:outline-none transition-all duration-300"
+                    placeholder="Enter your name"
                   />
                 </div>
                 {/* Email */}
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-xs text-zinc-500 font-mono tracking-wider uppercase">Email</label>
+                  <label htmlFor="email" className="text-sm font-semibold text-white font-sans">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -212,13 +137,13 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-zinc-50/50 border border-zinc-200 focus:border-purpleAccent focus:bg-white focus:shadow-[0_0_15px_rgba(124,90,237,0.08)] rounded-xl px-4 py-3 text-charcoal placeholder-zinc-400 text-sm font-sans focus:outline-none transition-all duration-300"
-                    placeholder="john@example.com"
+                    className="w-full bg-[#121214] border border-white/10 focus:border-white rounded-xl px-4 py-3 text-white placeholder-zinc-500 text-sm font-sans focus:outline-none transition-all duration-300"
+                    placeholder="Enter your email"
                   />
                 </div>
                 {/* Phone */}
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="text-xs text-zinc-500 font-mono tracking-wider uppercase">Mobile Number</label>
+                  <label htmlFor="phone" className="text-sm font-semibold text-white font-sans">Mobile Number</label>
                   <input
                     type="tel"
                     id="phone"
@@ -226,13 +151,13 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full bg-zinc-50/50 border border-zinc-200 focus:border-purpleAccent focus:bg-white focus:shadow-[0_0_15px_rgba(124,90,237,0.08)] rounded-xl px-4 py-3 text-charcoal placeholder-zinc-400 text-sm font-sans focus:outline-none transition-all duration-300"
-                    placeholder="+91 98765 43210"
+                    className="w-full bg-[#121214] border border-white/10 focus:border-white rounded-xl px-4 py-3 text-white placeholder-zinc-500 text-sm font-sans focus:outline-none transition-all duration-300"
+                    placeholder="Enter your mobile number"
                   />
                 </div>
                 {/* Subject */}
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-xs text-zinc-500 font-mono tracking-wider uppercase">Subject</label>
+                  <label htmlFor="subject" className="text-sm font-semibold text-white font-sans">Subject</label>
                   <input
                     type="text"
                     id="subject"
@@ -240,15 +165,15 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full bg-zinc-50/50 border border-zinc-200 focus:border-purpleAccent focus:bg-white focus:shadow-[0_0_15px_rgba(124,90,237,0.08)] rounded-xl px-4 py-3 text-charcoal placeholder-zinc-400 text-sm font-sans focus:outline-none transition-all duration-300"
-                    placeholder="Inquiry about project..."
+                    className="w-full bg-[#121214] border border-white/10 focus:border-white rounded-xl px-4 py-3 text-white placeholder-zinc-500 text-sm font-sans focus:outline-none transition-all duration-300"
+                    placeholder="Enter project subject"
                   />
                 </div>
               </div>
 
               {/* Message */}
               <div className="space-y-2">
-                <label htmlFor="message" className="text-xs text-zinc-500 font-mono tracking-wider uppercase">Message</label>
+                <label htmlFor="message" className="text-sm font-semibold text-white font-sans">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -256,8 +181,8 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full bg-zinc-50/50 border border-zinc-200 focus:border-purpleAccent focus:bg-white focus:shadow-[0_0_15px_rgba(124,90,237,0.08)] rounded-xl px-4 py-3 text-charcoal placeholder-zinc-400 text-sm font-sans focus:outline-none transition-all duration-300 resize-none"
-                  placeholder="Hi Arjun, I'd like to talk about..."
+                  className="w-full bg-[#121214] border border-white/10 focus:border-white rounded-xl px-4 py-3 text-white placeholder-zinc-500 text-sm font-sans focus:outline-none transition-all duration-300 resize-none"
+                  placeholder="Tell us about your project"
                 />
               </div>
 
@@ -265,20 +190,21 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full py-3.5 bg-charcoal text-white font-extrabold uppercase text-xs tracking-widest rounded-xl hover:bg-zinc-800 disabled:bg-zinc-300 disabled:text-zinc-500 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3.5 bg-white text-black font-extrabold text-sm rounded-xl hover:bg-[#EAE9E4] disabled:bg-zinc-800 disabled:text-zinc-500 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer select-none"
               >
                 {submitting ? (
                   <>
                     Sending...
-                    <i className="fa-solid fa-spinner fa-spin" />
+                    <i className="fa-solid fa-spinner fa-spin animate-spin" />
                   </>
                 ) : (
                   <>
-                    Send Message
-                    <i className="fa-solid fa-paper-plane" />
+                    Submit
+                    <i className="fa-solid fa-paper-plane text-xs" />
                   </>
                 )}
               </button>
+
 
               {/* Form status notification */}
               {status.message && (
