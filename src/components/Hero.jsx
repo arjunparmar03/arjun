@@ -255,12 +255,7 @@ const Hero = () => {
         <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-10 overflow-hidden">
 
           {/* Title: SOFTWARE ENGINEER stacked */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-center w-full mb-6 z-10"
-          >
+          <div className="text-center w-full mb-6 z-10">
             <h1 className="relative font-syne font-extrabold text-[9vw] text-[#0D0D0D] antialiased tracking-tighter leading-none select-none uppercase flex flex-col items-center gap-2">
               {/* Star decoration - left of SOFTWARE */}
               <span className="relative inline-flex items-center text-[#0D0D0D]">
@@ -277,14 +272,11 @@ const Hero = () => {
                 </span>
               </span>
             </h1>
-          </motion.div>
+          </div>
 
           {/* Static Photo Card - Red background, no animation */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="w-[180px] h-[240px] rounded-2xl overflow-hidden shadow-lg mb-8 flex-shrink-0"
+          <div
+            className="w-[180px] h-[240px] rounded-2xl overflow-hidden shadow-lg mb-8 flex-shrink-0 z-10"
             style={{ backgroundColor: '#D31A1A' }}
           >
             <img
@@ -292,18 +284,13 @@ const Hero = () => {
               alt="Arjun Parmar"
               className="object-cover object-top pointer-events-none select-none w-full h-full"
             />
-          </motion.div>
+          </div>
 
           {/* Footer metadata */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="w-full flex justify-between items-center px-2"
-          >
-            <span className="text-sm font-extrabold uppercase tracking-wider">©2026</span>
+          <div className="w-full flex justify-between items-center px-2 z-10">
+            <span className="text-sm font-extrabold uppercase tracking-wider text-[#0D0D0D]">©2026</span>
             <span className="text-[10px] font-semibold tracking-widest text-[#555555]">/CREATING SINCE 2022</span>
-          </motion.div>
+          </div>
         </div>
 
         {/* MOBILE INFO SECTION - Single column vertical flow */}
