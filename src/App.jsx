@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import ThreeBackground from './components/ThreeBackground';
 import Navbar from './components/Navbar';
@@ -10,8 +10,11 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import IdeaToLaunch from './components/IdeaToLaunch';
 import Footer from './components/Footer';
+import Loader from './components/Loader';
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -22,6 +25,10 @@ const App = () => {
     });
 
     window.lenis = lenis;
+
+    if (isLoading) {
+      lenis.stop();
+    }
 
     let rafId;
     function raf(time) {
@@ -37,6 +44,27 @@ const App = () => {
       window.lenis = null;
     };
   }, []);
+
+  useEffect(() => {
+    if (window.lenis) {
+      if (isLoading) {
+        window.lenis.stop();
+      } else {
+        window.lenis.start();
+      }
+    }
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (isLoading) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [isLoading]);
 
   const handleFooterLinkClick = (id, e) => {
     e.preventDefault();
@@ -59,6 +87,7 @@ const App = () => {
 
   return (
     <div className="relative min-h-screen z-0 bg-[#F7F5F2] text-[#0D0D0D] overflow-x-clip font-sans">
+      {isLoading && <Loader onComplete={() => setIsLoading(false)} />}
       {/* Grain overlay for warm textured matte feel */}
       <div className="grain-overlay" />
 
