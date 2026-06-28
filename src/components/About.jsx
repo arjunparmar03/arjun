@@ -36,32 +36,76 @@ const About = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Block: Bio Card */}
-          <div className="lg:col-span-6 space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, margin: '-100px' }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <TiltCard className="p-8 border border-zinc-200/60 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-[24px]">
-                <h3 className="text-4xl font-extrabold text-charcoal flex items-center gap-3 mb-6 font-syne tracking-tight">
-                  Hey!
-                </h3>
-                
-                <div className="space-y-4 text-zinc-600 text-sm md:text-base leading-relaxed font-sans">
-                  <p className="text-lg md:text-xl font-bold text-zinc-800 leading-snug md:leading-relaxed font-sans mb-2">
-                    I'm Arjun, a Software Engineer and Web Developer passionate about creating modern digital experiences.
-                  </p>
-                  <p>
-                    Currently, I serve as the Chief Operating Officer at Optenary, where I coordinate software development engineering targets, direct day-to-day agency operations, and manage hosting pipelines.
-                  </p>
-                  <p>
-                    Balancing academia and enterprise leadership has sharpened my organizational and technical skills. I focus on engineering high-performance web systems using React.js, Tailwind CSS, Supabase, and Framer Motion.
-                  </p>
+          {/* Left Block: Core Principles & Philosophy (Replaces the TiltCard) */}
+          <div className="lg:col-span-6 space-y-10 text-left">
+            <div className="space-y-4">
+              <span className="text-xs uppercase tracking-widest text-purpleAccent font-semibold font-mono">
+                /My Philosophy
+              </span>
+              <h3 className="text-4xl md:text-5xl font-extrabold text-[#0D0D0D] font-syne tracking-tight leading-none">
+                Driven by<br />
+                Clarity & System.
+              </h3>
+            </div>
+
+            <div className="space-y-8 mt-10">
+              {/* Principle 1 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="group border-b border-zinc-200 pb-6"
+              >
+                <div className="flex items-baseline gap-4 mb-2">
+                  <span className="text-sm font-mono font-bold text-purpleAccent">01</span>
+                  <h4 className="text-xl font-bold text-charcoal font-sans group-hover:text-purpleAccent transition-colors duration-300">
+                    Clean Simplicity
+                  </h4>
                 </div>
-              </TiltCard>
-            </motion.div>
+                <p className="text-zinc-500 text-sm md:text-base leading-relaxed font-sans pl-8">
+                  Focusing on direct layouts, clean typography, and stripping away unnecessary clutter to allow the core content to shine.
+                </p>
+              </motion.div>
+
+              {/* Principle 2 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="group border-b border-zinc-200 pb-6"
+              >
+                <div className="flex items-baseline gap-4 mb-2">
+                  <span className="text-sm font-mono font-bold text-purpleAccent">02</span>
+                  <h4 className="text-xl font-bold text-charcoal font-sans group-hover:text-purpleAccent transition-colors duration-300">
+                    High Performance
+                  </h4>
+                </div>
+                <p className="text-zinc-500 text-sm md:text-base leading-relaxed font-sans pl-8">
+                  Optimized assets, clean animation sequences, and efficient state managers to keep operations smooth at 60+ FPS.
+                </p>
+              </motion.div>
+
+              {/* Principle 3 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="group last:border-b-0 pb-6"
+              >
+                <div className="flex items-baseline gap-4 mb-2">
+                  <span className="text-sm font-mono font-bold text-purpleAccent">03</span>
+                  <h4 className="text-xl font-bold text-charcoal font-sans group-hover:text-purpleAccent transition-colors duration-300">
+                    Operational Balance
+                  </h4>
+                </div>
+                <p className="text-zinc-500 text-sm md:text-base leading-relaxed font-sans pl-8">
+                  Integrating engineering targets with real-world business objectives, managing agency targets at Optenary.
+                </p>
+              </motion.div>
+            </div>
           </div>
 
           {/* Right Block: Vertical Timeline */}

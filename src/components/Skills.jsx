@@ -1,36 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import TiltCard from './TiltCard';
 
 const skillsData = [
   {
     category: 'Frontend Development',
-    icon: 'fa-laptop-code',
-    accentColor: 'cyan',
     list: [
-      { name: 'HTML5 & CSS3', percentage: 95 },
-      { name: 'JavaScript (ES6+)', percentage: 90 },
-      { name: 'React.js', percentage: 90 }
+      'React.js & Next.js',
+      'JavaScript (ES6+)',
+      'Tailwind CSS & Framer Motion',
+      'HTML5 & CSS3 / Responsive Layouts'
     ]
   },
   {
-    category: 'Backend & Programming',
-    icon: 'fa-server',
-    accentColor: 'purple',
+    category: 'Backend & Systems',
     list: [
-      { name: 'Python', percentage: 80 },
-      { name: 'Node.js & Express', percentage: 75 },
-      { name: 'Supabase / Firebase', percentage: 80 }
+      'Python (OOP & Algorithms)',
+      'Node.js & Express',
+      'Supabase & Firebase',
+      'RESTful APIs & SQL Databases'
     ]
   },
   {
-    category: 'Operations & Management',
-    icon: 'fa-users-gear',
-    accentColor: 'cyan',
+    category: 'Operations & Strategy',
     list: [
-      { name: 'COO Operations & Management', percentage: 90 },
-      { name: 'Git & GitHub (Version Control)', percentage: 90 },
-      { name: 'Client & Project Strategy', percentage: 85 }
+      'COO Operations & Management',
+      'Git & GitHub (Version Control)',
+      'Developer Workflow Automation',
+      'Client Relations & Project Strategy'
     ]
   }
 ];
@@ -49,8 +45,8 @@ const Skills = () => {
           <div className="w-16 h-1 bg-purpleAccent mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Categories Grid (Majd clean list layout style) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 max-w-6xl mx-auto mt-12">
           {skillsData.map((category, idx) => (
             <motion.div
               key={idx}
@@ -58,49 +54,33 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: '-100px' }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
+              className="space-y-8 text-left"
             >
-              <TiltCard className="p-8 border border-zinc-200/60 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-[24px] h-full flex flex-col justify-between">
-                <div>
-                  {/* Card Header with Icon */}
-                  <div className="flex items-center gap-4 mb-8">
-                    <div 
-                      className="w-12 h-12 rounded-xl flex items-center justify-center border bg-zinc-50 border-purpleAccent/25 text-purpleAccent shadow-[0_4px_12px_rgba(124,90,237,0.08)]"
-                    >
-                      <i className={`fa-solid ${category.icon} text-xl`} />
+              {/* Category Header */}
+              <div className="border-b border-zinc-200/80 pb-4 select-none">
+                <span className="text-xs font-mono text-purpleAccent font-bold">0{idx + 1}</span>
+                <h3 className="text-2xl font-extrabold text-[#0D0D0D] font-syne tracking-tight mt-1">
+                  {category.category}
+                </h3>
+              </div>
+
+              {/* Skills List */}
+              <div className="flex flex-col gap-6">
+                {category.list.map((skill, sIdx) => (
+                  <motion.div
+                    key={sIdx}
+                    whileHover={{ x: 8 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    className="border-b border-zinc-100 last:border-b-0 pb-4 last:pb-0 group cursor-default"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-base font-bold text-[#0D0D0D] font-sans group-hover:text-purpleAccent transition-colors duration-300">
+                        {skill}
+                      </span>
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-charcoal font-sans tracking-tight">
-                      {category.category}
-                    </h3>
-                  </div>
-
-                  {/* Skills Progress list */}
-                  <div className="space-y-6">
-                    {category.list.map((skill, sIdx) => (
-                      <div key={sIdx} className="space-y-2 text-left">
-                        <div className="flex justify-between text-xs md:text-sm">
-                          <span className="text-zinc-600 font-sans">{skill.name}</span>
-                          <span className="font-mono text-purpleAccent font-bold">{skill.percentage}%</span>
-                        </div>
-                        {/* Progress Bar Container */}
-                        <div className="w-full bg-zinc-100 h-2 rounded-full overflow-hidden border border-zinc-200/40">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.percentage}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.2, ease: 'easeOut', delay: 0.1 }}
-                            className="h-full rounded-full bg-gradient-to-r from-purpleAccent to-[#a78bfa]"
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-4 border-t border-zinc-200 flex items-center gap-2 text-[10px] text-zinc-400 font-mono">
-                  <i className="fa-solid fa-microchip text-zinc-500" />
-                  <span>3D tilt enabled</span>
-                </div>
-              </TiltCard>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

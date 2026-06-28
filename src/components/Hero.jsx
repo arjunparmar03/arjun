@@ -6,11 +6,11 @@ const ChromeStar = () => (
   <motion.svg
     viewBox="0 0 100 100"
     className="w-full h-full drop-shadow-[0_10px_25px_rgba(0,0,0,0.18)] filter"
-    whileHover={{ 
-      rotate: -15, 
+    whileHover={{
+      rotate: -15,
       scale: 1.15,
       y: -6,
-      transition: { type: "spring", stiffness: 300, damping: 15 } 
+      transition: { type: "spring", stiffness: 300, damping: 15 }
     }}
     animate={{
       y: [0, -6, 0],
@@ -33,21 +33,21 @@ const ChromeStar = () => (
         <stop offset="90%" stopColor="#1E1B4B" />
         <stop offset="100%" stopColor="#FFFFFF" />
       </linearGradient>
-      
+
       <linearGradient id="darkMetalStar" x1="0%" y1="0%" x2="0%" y2="100%">
         <stop offset="0%" stopColor="#1A1A1C" />
         <stop offset="50%" stopColor="#252527" />
         <stop offset="100%" stopColor="#080809" />
       </linearGradient>
     </defs>
-    
+
     {/* 3D Bevel Extrusion Layer */}
     <path
       d="M 50 0 C 50 25, 75 50, 100 50 C 75 50, 50 75, 50 100 C 50 75, 25 50, 0 50 C 25 50, 50 25, 50 0 Z"
       fill="url(#chromeGradStar)"
       transform="translate(2, 3)"
     />
-    
+
     {/* Main Front Plate */}
     <path
       d="M 50 0 C 50 25, 75 50, 100 50 C 75 50, 50 75, 50 100 C 50 75, 25 50, 0 50 C 25 50, 50 25, 50 0 Z"
@@ -56,7 +56,7 @@ const ChromeStar = () => (
       strokeWidth="3.5"
       strokeLinejoin="round"
     />
-    
+
     {/* Metallic Specular Reflection Curve */}
     <path
       d="M 50 8 C 50 28, 72 50, 92 50"
@@ -74,11 +74,11 @@ const ChromeLightning = () => (
   <motion.svg
     viewBox="0 0 100 100"
     className="w-full h-full drop-shadow-[0_10px_25px_rgba(0,0,0,0.18)] filter"
-    whileHover={{ 
-      rotate: 15, 
+    whileHover={{
+      rotate: 15,
       scale: 1.15,
       y: -6,
-      transition: { type: "spring", stiffness: 300, damping: 15 } 
+      transition: { type: "spring", stiffness: 300, damping: 15 }
     }}
     animate={{
       y: [0, 6, 0],
@@ -101,21 +101,21 @@ const ChromeLightning = () => (
         <stop offset="80%" stopColor="#C084FC" />
         <stop offset="100%" stopColor="#FFFFFF" />
       </linearGradient>
-      
+
       <linearGradient id="darkMetalBolt" x1="0%" y1="0%" x2="0%" y2="100%">
         <stop offset="0%" stopColor="#1A1A1C" />
         <stop offset="50%" stopColor="#252527" />
         <stop offset="100%" stopColor="#080809" />
       </linearGradient>
     </defs>
-    
+
     {/* 3D Bevel Extrusion Layer */}
     <path
       d="M 45 5 L 75 5 L 45 48 L 78 48 L 22 95 L 42 55 L 18 55 Z"
       fill="url(#chromeGradBolt)"
       transform="translate(2, 3)"
     />
-    
+
     {/* Main Front Plate */}
     <path
       d="M 45 5 L 75 5 L 45 48 L 78 48 L 22 95 L 42 55 L 18 55 Z"
@@ -124,7 +124,7 @@ const ChromeLightning = () => (
       strokeWidth="3.5"
       strokeLinejoin="round"
     />
-    
+
     {/* Metallic Specular Reflection Highlights */}
     <path
       d="M 47 10 L 68 10"
@@ -183,8 +183,7 @@ const Hero = () => {
     damping: 25
   });
 
-  // --- TRANSFORMS FOR PHOTO CARD (SECTION 1) ---
-  const scaleEnd = isMobile ? 1.35 : 2.05;
+  const scaleEnd = isMobile ? 1.35 : 1.75;
   const photoWidth = isMobile ? 160 * scaleEnd : 220 * scaleEnd;
   const photoHeight = isMobile ? 213 * scaleEnd : 293 * scaleEnd;
 
@@ -197,8 +196,8 @@ const Hero = () => {
 
   // Card Background Color transition: neutral grey to vibrant cyan
   const photoBg = useTransform(
-    smoothProgress, 
-    [0, 0.5, 1.0], 
+    smoothProgress,
+    [0, 0.5, 1.0],
     ["#A3A3A3", "#A3A3A3", "#00E5FF"]
   );
 
@@ -213,7 +212,7 @@ const Hero = () => {
   const photoRotateY = useTransform(smoothProgress, [0, 1.0], [0, isMobile ? 0 : -180]);
   const photoRotateX = useTransform(smoothProgress, [0, 0.5, 1.0], [0, isMobile ? 0 : 12, 0]);
   const photoRotateZ = useTransform(smoothProgress, [0, 0.5, 1.0], [0, isMobile ? 0 : -6, 0]);
-  
+
   // Scale transition: starts scaled down (1 / scaleEnd) and grows to native full resolution size (1.0)
   const photoScale = useTransform(smoothProgress, [0, 1.0], [1 / scaleEnd, isMobile ? 1 / scaleEnd : 1.0]);
 
@@ -254,24 +253,24 @@ const Hero = () => {
       <div id="home" className="relative bg-warmWhite text-[#0D0D0D]">
         {/* MOBILE HERO SECTION - Normal flow, no sticky */}
         <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-10 overflow-hidden">
-          
+
           {/* Title: SOFTWARE ENGINEER stacked */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-center w-full mb-6"
+            className="text-center w-full mb-6 z-10"
           >
-            <h1 className="relative font-syne font-extrabold text-[9vw] tracking-tighter leading-none select-none uppercase flex flex-col items-center gap-2">
+            <h1 className="relative font-syne font-extrabold text-[9vw] text-[#0D0D0D] antialiased tracking-tighter leading-none select-none uppercase flex flex-col items-center gap-2">
               {/* Star decoration - left of SOFTWARE */}
-              <span className="relative inline-flex items-center">
+              <span className="relative inline-flex items-center text-[#0D0D0D]">
                 <span className="absolute -left-[8vw] -top-[1.5vw] w-[7vw] h-[7vw] select-none flex items-center justify-center pointer-events-auto">
                   <ChromeStar />
                 </span>
                 SOFTWARE
               </span>
               {/* Lightning decoration - right of ENGINEER */}
-              <span className="relative inline-flex items-center mt-1">
+              <span className="relative inline-flex items-center mt-1 text-[#0D0D0D]">
                 ENGINEER
                 <span className="absolute -right-[8vw] bottom-[0vw] w-[7vw] h-[7vw] select-none flex items-center justify-center pointer-events-auto">
                   <ChromeLightning />
@@ -406,9 +405,9 @@ const Hero = () => {
         Sticks during the first 100vh of scroll (0.0 to 1.0 progress).
       */}
       <div className="sticky top-0 h-screen w-full overflow-hidden z-30 pointer-events-none flex flex-col items-center justify-center">
-        
+
         {/* TEXT LAYER */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -416,11 +415,11 @@ const Hero = () => {
           className="absolute inset-0 flex flex-col justify-between items-center w-full h-full pointer-events-none z-40 py-20"
         >
           {/* Line 1: SOFTWARE */}
-          <motion.div 
+          <motion.div
             style={{ y: textLine1Y }}
             className="absolute top-[34%] -translate-y-1/2 left-0 w-full text-center flex justify-center items-center"
           >
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
@@ -435,11 +434,11 @@ const Hero = () => {
           </motion.div>
 
           {/* Line 2: ENGINEER */}
-          <motion.div 
+          <motion.div
             style={{ y: textLine2Y }}
             className="absolute bottom-[34%] translate-y-1/2 left-0 w-full text-center flex justify-center items-center"
           >
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -484,7 +483,7 @@ const Hero = () => {
           className="absolute left-1/2 top-1/2 pointer-events-auto cursor-pointer will-change-transform"
         >
           {/* FRONT FACE: Black & White / Dynamic Color shift */}
-          <motion.div 
+          <motion.div
             style={{
               width: '100%',
               height: '100%',
@@ -504,7 +503,7 @@ const Hero = () => {
           </motion.div>
 
           {/* BACK FACE: Color on Crimson Background */}
-          <div 
+          <div
             style={{
               width: '100%',
               height: '100%',
@@ -532,9 +531,9 @@ const Hero = () => {
       */}
       <div id="about" className="relative w-full h-screen bg-[#F0EDE8] z-20 flex items-center justify-center">
         <div className="w-full max-w-7xl mx-auto px-16 py-20 grid grid-cols-3 gap-16 items-center">
-          
+
           {/* LEFT COLUMN */}
-          <div className="flex flex-col justify-between h-[600px] text-left">
+          <div className="flex flex-col justify-between h-[513px] text-left">
             <h2 className="text-[80px] font-extrabold leading-none tracking-tight select-none">
               Hey!
             </h2>
@@ -544,12 +543,12 @@ const Hero = () => {
           </div>
 
           {/* CENTER COLUMN (Invisible placeholder for the single sticky card to land in) */}
-          <div className="flex justify-center items-center h-[600px]">
-            <div className="w-[450px] h-[600px] pointer-events-none" />
+          <div className="flex justify-center items-center h-[513px]">
+            <div className="w-[385px] h-[513px] pointer-events-none" />
           </div>
 
           {/* RIGHT COLUMN */}
-          <div className="flex flex-col justify-between h-[600px] text-left">
+          <div className="flex flex-col justify-between h-[513px] text-left">
             <div className="space-y-6 text-[16px] text-zinc-700 leading-relaxed font-sans">
               <p>
                 Balancing academic targets and enterprise leadership has sharpened my organizational and technical skillsets. I specialize in designing and engineering custom web systems with React, Framer Motion, and Tailwind CSS.
@@ -558,10 +557,10 @@ const Hero = () => {
                 Whether aligning product direction, optimizing developer workflows, or tuning front-end performance, I am driven by clean code, automation, and outstanding visual quality.
               </p>
             </div>
-            
+
             {/* Get Started link with interactive Arrow-In-Box Icon */}
             <div>
-              <a 
+              <a
                 href="#about"
                 onClick={(e) => {
                   e.preventDefault();
@@ -582,14 +581,14 @@ const Hero = () => {
               >
                 Get Started
                 <span className="w-7 h-7 rounded-md border border-[#0D0D0D]/10 flex items-center justify-center transition-all duration-300">
-                  <svg 
-                    width="12" 
-                    height="12" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2.5" 
-                    strokeLinecap="round" 
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
                   >
                     <line x1="7" y1="17" x2="17" y2="7"></line>
