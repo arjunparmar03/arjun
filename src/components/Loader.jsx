@@ -2,17 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Loader = ({ onComplete }) => {
-  // Centerline SVG paths used in the mask to reveal the font stroke-by-stroke
-  const stroke1 = "M 100,165 C 105,130 115,80 130,60 C 135,80 145,130 150,165"; // 1. Capital A stem
-  const stroke2 = "M 82,130 L 160,130"; // 2. Capital A crossbar
-  const stroke3 = "M 175,135 C 179,135 183,120 186,120 C 190,120 192,120 194,120 C 196,120 198,130 198,140 C 201,140 205,120 208,120 C 210,120 212,160 212,200 C 212,210 201,215 201,205 C 201,195 211,170 220,140 C 224,130 228,120 230,120 C 232,120 234,140 236,140 C 238,140 240,120 242,120 C 244,120 246,130 246,140 C 249,135 253,120 256,120 C 259,120 260,130 260,140 C 263,130 267,120 270,120 C 273,120 274,130 274,140 C 274,143 280,140 295,135"; // 3. Lowercase 'rjun'
-  const stroke4 = "M 206,98 A 1.5,1.5 0 1,1 209,98 A 1.5,1.5 0 1,1 206,98"; // 4. Dot of 'j'
-  const stroke5 = "M 335,80 C 335,105 328,140 322,180"; // 5. Capital P stem
-  const stroke6 = "M 326,105 C 340,91 365,83 365,110 C 365,128 342,141 326,141"; // 6. Capital P loop
-  const stroke7 = "M 365,140 C 369,130 373,120 377,120 C 371,120 367,130 369,140 C 371,145 379,145 381,140 C 381,130 381,120 381,120 C 381,130 381,140 381,140 C 385,135 389,120 393,120 C 397,120 399,120 401,120 C 403,120 405,130 405,140 C 409,130 413,120 417,120 C 421,120 423,130 423,140 C 427,130 431,120 435,120 C 439,120 441,130 441,140 C 445,130 449,120 453,120 C 447,120 443,130 445,140 C 447,145 455,145 457,140 C 457,130 457,120 457,120 C 457,130 457,140 457,140 C 461,135 465,120 469,120 C 473,120 475,120 477,120 C 479,120 481,130 481,140 C 481,143 487,140 504,135"; // 7. Lowercase 'armar'
-
-  const customEase = [0.43, 0.13, 0.23, 0.96];
-
   // Variations for the fade-out of the full-screen container (1.20s - 1.50s)
   const containerVariants = {
     initial: { opacity: 1 },
@@ -53,6 +42,11 @@ const Loader = ({ onComplete }) => {
               </feMerge>
             </filter>
 
+            {/* Feathered blur filter for the reveal mask's leading edge */}
+            <filter id="reveal-blur" x="-10%" y="-10%" width="120%" height="120%">
+              <feGaussianBlur stdDeviation="16" />
+            </filter>
+
             {/* Sweep gradient for the mask */}
             <linearGradient id="sweep-grad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0" />
@@ -62,91 +56,26 @@ const Loader = ({ onComplete }) => {
               <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
             </linearGradient>
 
-            {/* Writing reveal mask (follows the natural curves with wider strokeWidth) */}
+            {/* Left-to-right feathered reveal mask using robust numeric width */}
             <mask id="writing-reveal-mask">
               <rect x="0" y="0" width="100%" height="100%" fill="black" />
-              <g fill="none" stroke="white" strokeWidth="70" strokeLinecap="round" strokeLinejoin="round">
-                {/* 1. Capital A stem: 0.10s - 0.22s */}
-                <motion.path
-                  d={stroke1}
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{
-                    delay: 0.10,
-                    duration: 0.12,
-                    ease: customEase,
-                  }}
-                />
-                {/* 2. Capital A crossbar: 0.22s - 0.28s */}
-                <motion.path
-                  d={stroke2}
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{
-                    delay: 0.22,
-                    duration: 0.06,
-                    ease: "linear",
-                  }}
-                />
-                {/* 3. Lowercase rjun: 0.28s - 0.58s */}
-                <motion.path
-                  d={stroke3}
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{
-                    delay: 0.28,
-                    duration: 0.30,
-                    ease: customEase,
-                  }}
-                />
-                {/* 4. Dot of j: 0.58s - 0.62s */}
-                <motion.path
-                  d={stroke4}
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{
-                    delay: 0.58,
-                    duration: 0.04,
-                    ease: "linear",
-                  }}
-                />
-                {/* 5. Capital P stem: 0.62s - 0.72s */}
-                <motion.path
-                  d={stroke5}
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{
-                    delay: 0.62,
-                    duration: 0.10,
-                    ease: customEase,
-                  }}
-                />
-                {/* 6. Capital P loop: 0.72s - 0.82s */}
-                <motion.path
-                  d={stroke6}
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{
-                    delay: 0.72,
-                    duration: 0.10,
-                    ease: customEase,
-                  }}
-                />
-                {/* 7. Lowercase armar: 0.82s - 1.05s */}
-                <motion.path
-                  d={stroke7}
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{
-                    delay: 0.82,
-                    duration: 0.23,
-                    ease: customEase,
-                  }}
-                />
-              </g>
+              <motion.rect
+                x="-30"
+                y="0"
+                height="100%"
+                fill="white"
+                filter="url(#reveal-blur)"
+                initial={{ width: 0 }}
+                animate={{ width: 640 }}
+                transition={{
+                  delay: 0.10,
+                  duration: 0.95,
+                  ease: [0.25, 0.1, 0.25, 1.0], // smooth cubic-bezier curve
+                }}
+              />
             </mask>
 
-            {/* Sweep mask */}
+            {/* Sweep mask for the glowing purple accent sweep */}
             <mask id="sweep-mask">
               <motion.rect
                 x="-100%"
@@ -164,7 +93,7 @@ const Loader = ({ onComplete }) => {
             </mask>
           </defs>
 
-          {/* 1. Underlying main white text layer revealed by the curved writing mask */}
+          {/* 1. Underlying main white text layer revealed by the left-to-right feathered sweep */}
           <g mask="url(#writing-reveal-mask)">
             {/* Word 1: Arjun */}
             <text
