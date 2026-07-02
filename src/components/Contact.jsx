@@ -32,14 +32,14 @@ const Contact = () => {
       setTimeout(() => {
         setStatus({
           type: 'success',
-          message: `[Simulated] Thank you, ${formData.name}! Your message was simulated successfully.`
+          message: `⚠️ [Simulation Mode] Thank you, ${formData.name}! Message simulated successfully because VITE_TELEGRAM credentials are not configured on your hosting dashboard.`
         });
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
         setSubmitting(false);
 
         setTimeout(() => {
           setStatus({ type: '', message: '' });
-        }, 5000);
+        }, 8000);
       }, 1200);
       return;
     }
@@ -68,7 +68,7 @@ const Contact = () => {
       if (response.ok && data.ok) {
         setStatus({
           type: 'success',
-          message: `Thank you, ${formData.name}! Your message has been sent successfully.`
+          message: `Thank you, ${formData.name}! Your message has been sent to Telegram successfully.`
         });
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       } else {
@@ -78,7 +78,7 @@ const Contact = () => {
       console.error('Error sending message to Telegram:', error);
       setStatus({
         type: 'error',
-        message: 'Something went wrong while sending your message. Please check your internet connection or try again.'
+        message: `Error sending message: ${error.message || 'Something went wrong. Please check your credentials and try again.'}`
       });
     } finally {
       setSubmitting(false);
