@@ -6,6 +6,11 @@
   html {
     scroll-behavior: auto !important;
   }
+  @media (min-width: 1024px) {
+    html {
+      font-size: 87.5%; /* Reduces global content scale by 12.5% for laptop/desktop screen widths */
+    }
+  }
   html.lenis, html.lenis body {
     height: auto;
   }

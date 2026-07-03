@@ -295,15 +295,15 @@ const Hero = () => {
 
         {/* MOBILE INFO SECTION - Single column vertical flow */}
         <div id="about" className="relative w-full bg-[#F0EDE8] px-6 py-14">
-          {/* Hey! heading */}
+          {/* Hey, I'm Arjun heading */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-[48px] font-extrabold leading-none tracking-tight select-none mb-10"
+            className="text-[48px] font-extrabold leading-[1.15] tracking-tight select-none mb-6"
           >
-            Hey!
+            Hey, I'm <span className="text-purpleAccent">Arjun</span>
           </motion.h2>
 
           {/* Bio paragraph - bold intro */}
@@ -314,7 +314,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="text-[18px] font-bold text-zinc-900 leading-snug font-sans mb-10"
           >
-            I'm Arjun, co-founder & COO at Optenary. I manage product operations, direct day-to-day engineering targets, and build high-performance web interfaces.
+            Co-founder & COO at Optenary. I manage product operations, direct day-to-day engineering targets, and build high-performance web interfaces.
           </motion.p>
 
           {/* Secondary paragraphs */}
@@ -521,11 +521,11 @@ const Hero = () => {
 
           {/* LEFT COLUMN */}
           <div className="flex flex-col justify-between h-[513px] text-left">
-            <h2 className="text-[80px] font-extrabold leading-none tracking-tight select-none">
-              Hey!
+            <h2 className="text-[68px] font-extrabold leading-[1.1] tracking-tight select-none">
+              Hey,<br />I'm <span className="text-purpleAccent">Arjun</span>
             </h2>
-            <p className="text-[22px] font-bold text-zinc-900 leading-relaxed font-sans pr-4">
-              I'm Arjun, co-founder & COO at Optenary. I manage product operations, direct day-to-day engineering targets, and build high-performance web interfaces.
+            <p className="text-[20px] font-bold text-zinc-900 leading-relaxed font-sans pr-4">
+              Co-founder & COO at Optenary. I manage product operations, direct day-to-day engineering targets, and build high-performance web interfaces.
             </p>
           </div>
 

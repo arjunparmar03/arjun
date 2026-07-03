@@ -100,17 +100,15 @@ const Projects = () => {
                   href={project.live}
                   target="_blank"
                   rel="noreferrer"
-                  whileHover={{ y: -10 }}
+                  whileHover={{ y: -6 }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  className={`p-6 md:p-10 rounded-[28px] overflow-hidden flex items-center justify-center cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.02)] border border-zinc-200/50 group aspect-[4/3] w-full ${project.bgColor}`}
+                  className="rounded-2xl overflow-hidden cursor-pointer shadow-[0_12px_30px_rgba(0,0,0,0.06)] border border-zinc-200/60 group w-full block bg-white"
                 >
-                  <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl relative">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03] select-none pointer-events-none"
-                    />
-                  </div>
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02] select-none pointer-events-none"
+                  />
                 </motion.a>
 
                 {/* Project Details (Outside the card mockup) */}
@@ -124,28 +122,6 @@ const Projects = () => {
                     >
                       {project.title}
                     </a>
-                    
-                    {/* Compact quick links */}
-                    <div className="flex items-center gap-2 shrink-0">
-                      {project.github && (
-                        <a 
-                          href={project.github} 
-                          target="_blank" 
-                          rel="noreferrer"
-                          className="w-9 h-9 rounded-full border border-zinc-200 bg-white hover:bg-zinc-50 flex items-center justify-center text-zinc-500 hover:text-charcoal transition-all shadow-sm"
-                        >
-                          <i className="fa-brands fa-github text-base" />
-                        </a>
-                      )}
-                      <a 
-                        href={project.live} 
-                        target="_blank" 
-                        rel="noreferrer"
-                        className="w-9 h-9 rounded-full border border-zinc-200 bg-white hover:bg-zinc-50 flex items-center justify-center text-zinc-500 hover:text-charcoal transition-all shadow-sm"
-                      >
-                        <i className="fa-solid fa-arrow-up-right text-sm" />
-                      </a>
-                    </div>
                   </div>
                   
                   {/* Technology tag */}
