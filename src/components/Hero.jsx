@@ -289,7 +289,7 @@ const Hero = () => {
           {/* Footer metadata */}
           <div className="w-full flex justify-between items-center px-2 z-10">
             <span className="text-sm font-extrabold uppercase tracking-wider text-[#0D0D0D]">©2026</span>
-            <span className="text-[10px] font-semibold tracking-widest text-[#555555]">/CREATING SINCE 2022</span>
+            <span className="text-[10px] font-semibold tracking-widest text-[#555555]">/CREATING SINCE 2025</span>
           </div>
         </div>
 
@@ -446,7 +446,7 @@ const Hero = () => {
           className="absolute bottom-8 left-0 right-0 px-12 flex justify-between items-center w-full font-sans pointer-events-none z-40"
         >
           <span className="text-base font-extrabold uppercase tracking-wider">©2026</span>
-          <span className="text-xs font-semibold tracking-widest text-[#555555]">/CREATING SINCE 2022</span>
+          <span className="text-xs font-semibold tracking-widest text-[#555555]">/CREATING SINCE 2025</span>
         </motion.div>
 
         {/* SINGLE CONTINUOUS STICKY PHOTO CARD */}
