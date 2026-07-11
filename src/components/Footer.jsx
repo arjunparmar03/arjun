@@ -166,8 +166,8 @@ const Footer = () => {
         </div>
 
         {/* Large oversized background typography */}
-        <div className="absolute inset-x-0 bottom-0 pointer-events-none flex justify-center items-end overflow-hidden h-[30%] select-none z-0 opacity-40">
-          <span className="text-[20vw] font-black leading-[0.7] tracking-tighter text-[#161616] font-sans uppercase">
+        <div className="absolute inset-x-0 bottom-0 pointer-events-none flex justify-center items-end overflow-hidden h-[38%] select-none z-0 opacity-40">
+          <span className="text-[27vw] font-black leading-[0.7] tracking-tighter text-[#161616] font-sans uppercase">
             ARJUN
           </span>
         </div>
