@@ -185,8 +185,7 @@ const skillsData = [
       { name: 'GitHub', logo: <GitHubLogo /> },
       { name: 'Workflow Automation', logo: <RobotIcon /> },
       { name: 'Client Relations', logo: <UsersIcon /> },
-      { name: 'Project Strategy', logo: <RoadmapIcon /> },
-      { name: 'And more', logo: <PlusIcon /> }
+      { name: 'Project Strategy', logo: <RoadmapIcon /> }
     ]
   }
 ];
