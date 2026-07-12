@@ -341,20 +341,20 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           >
             <a
-              href="#about"
+              href="#contact"
               onClick={(e) => {
                 e.preventDefault();
                 if (window.lenis) {
-                  const aboutSection = document.getElementById('about');
-                  if (aboutSection) {
-                    window.lenis.scrollTo(aboutSection, {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    window.lenis.scrollTo(contactSection, {
                       offset: -80,
                       duration: 2.2,
                       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
                     });
                   }
                 } else {
-                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
               className="inline-flex items-center gap-2.5 font-bold text-sm text-[#0D0D0D] group cursor-pointer hover:opacity-70 transition-opacity duration-300"
@@ -548,20 +548,20 @@ const Hero = () => {
             {/* Get Started link with interactive Arrow-In-Box Icon */}
             <div>
               <a
-                href="#about"
+                href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
                   if (window.lenis) {
-                    const aboutSection = document.getElementById('about');
-                    if (aboutSection) {
-                      window.lenis.scrollTo(aboutSection, {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      window.lenis.scrollTo(contactSection, {
                         offset: -80,
                         duration: 2.2,
                         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
                       });
                     }
                   } else {
-                    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
                 className="inline-flex items-center gap-2.5 font-bold text-sm text-[#0D0D0D] group cursor-pointer hover:opacity-70 transition-opacity duration-300"
