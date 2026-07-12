@@ -95,12 +95,20 @@ const Footer = () => {
                 <span className="text-zinc-500 font-mono text-xs tracking-wider uppercase mb-2 block">
                   /Contact
                 </span>
-                <a
-                  href="mailto:arjun@optenary.tech"
-                  className="text-base font-bold text-white hover:text-purpleAccent transition-colors duration-300 font-sans break-all"
-                >
-                  arjun@optenary.tech
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="mailto:arjun@optenary.tech"
+                    className="text-base font-bold text-white hover:text-purpleAccent transition-colors duration-300 font-sans break-all"
+                  >
+                    arjun@optenary.tech
+                  </a>
+                  <a
+                    href="tel:+916351561018"
+                    className="text-base font-bold text-white hover:text-purpleAccent transition-colors duration-300 font-sans"
+                  >
+                    +91 6351561018
+                  </a>
+                </div>
               </div>
 
               <div className="grid grid-cols-2 gap-6 w-full">
@@ -225,12 +233,20 @@ const Footer = () => {
                   <span className="text-zinc-500 font-mono text-xs tracking-wider uppercase mb-2 block">
                     /Contact
                   </span>
-                  <a
-                    href="mailto:arjun@optenary.tech"
-                    className="text-base md:text-lg font-bold text-white hover:text-purpleAccent transition-colors duration-300 font-sans break-all"
-                  >
-                    arjun@optenary.tech
-                  </a>
+                  <div className="flex flex-col gap-1.5">
+                    <a
+                      href="mailto:arjun@optenary.tech"
+                      className="text-base md:text-lg font-bold text-white hover:text-purpleAccent transition-colors duration-300 font-sans break-all"
+                    >
+                      arjun@optenary.tech
+                    </a>
+                    <a
+                      href="tel:+916351561018"
+                      className="text-base md:text-lg font-bold text-white hover:text-purpleAccent transition-colors duration-300 font-sans"
+                    >
+                      +91 6351561018
+                    </a>
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-8 w-full">
