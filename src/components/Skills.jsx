@@ -154,12 +154,12 @@ const skillsData = [
     description: 'Building beautiful, responsive & accessible user experiences.',
     icon: <CodeIcon />,
     list: [
-      { name: 'React.js', logo: <ReactLogo /> },
-      { name: 'Next.js', logo: <NextLogo /> },
-      { name: 'JavaScript', logo: <JSLogo /> },
-      { name: 'Tailwind CSS', logo: <TailwindLogo /> },
-      { name: 'HTML5', logo: <HTML5Logo /> },
-      { name: 'CSS3', logo: <CSS3Logo /> }
+      { name: 'React.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+      { name: 'Next.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
+      { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
+      { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
+      { name: 'HTML5', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg' },
+      { name: 'CSS3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg' }
     ]
   },
   {
@@ -167,11 +167,11 @@ const skillsData = [
     description: 'Scalable architectures, robust APIs & reliable data systems.',
     icon: <DBIcon />,
     list: [
-      { name: 'Python', logo: <PythonLogo /> },
-      { name: 'Node.js', logo: <NodeLogo /> },
-      { name: 'Express', logo: <ExpressLogo /> },
-      { name: 'Supabase', logo: <SupabaseLogo /> },
-      { name: 'Firebase', logo: <FirebaseLogo /> },
+      { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
+      { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
+      { name: 'Express', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg' },
+      { name: 'Supabase', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg' },
+      { name: 'Firebase', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg' },
       { name: 'REST API', logo: <RESTLogo /> },
       { name: 'SQL Databases', logo: <SQLLogo /> }
     ]
@@ -181,8 +181,8 @@ const skillsData = [
     description: 'Automation, version control & client-focused project strategy.',
     icon: <TargetIcon />,
     list: [
-      { name: 'Git', logo: <GitLogo /> },
-      { name: 'GitHub', logo: <GitHubLogo /> },
+      { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
+      { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' },
       { name: 'Workflow Automation', logo: <RobotIcon /> },
       { name: 'Client Relations', logo: <UsersIcon /> },
       { name: 'Project Strategy', logo: <RoadmapIcon /> }
@@ -275,8 +275,18 @@ const Skills = () => {
                 {category.list.map((skill, sIdx) => (
                   <div key={sIdx} className="flex items-center gap-3 group/item select-none cursor-default">
                     {/* Logo Wrapper */}
-                    <div className="w-9 h-9 rounded-xl bg-black/5 flex items-center justify-center text-zinc-700 transition-all duration-300 group-hover/item:bg-purpleAccent/10 group-hover/item:text-purpleAccent shrink-0">
-                      {skill.logo}
+                    <div className="w-9 h-9 rounded-xl bg-black/5 flex items-center justify-center p-1.5 transition-all duration-300 group-hover/item:bg-purpleAccent/10 shrink-0">
+                      {typeof skill.logo === 'string' ? (
+                        <img 
+                          src={skill.logo} 
+                          alt={skill.name} 
+                          className="w-5 h-5 object-contain filter group-hover/item:scale-110 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-5 h-5 text-zinc-700 group-hover/item:text-purpleAccent group-hover/item:scale-110 transition-all duration-300">
+                          {skill.logo}
+                        </div>
+                      )}
                     </div>
                     <span className="text-sm font-semibold text-charcoal/80 group-hover/item:text-purpleAccent transition-colors duration-200 font-sans">
                       {skill.name}
