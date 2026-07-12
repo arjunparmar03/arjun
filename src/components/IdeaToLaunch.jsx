@@ -37,7 +37,7 @@ const IdeaToLaunch = () => {
   const step = rangeLength / words.length;
 
   return (
-    <div id="idea-to-launch" ref={containerRef} className="relative h-[300vh] bg-warmWhite z-20">
+    <div id="idea-to-launch" ref={containerRef} className="relative h-[120vh] md:h-[150vh] bg-warmWhite z-20">
       {/* Sticky full-screen container */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         {/* Centered text box */}
