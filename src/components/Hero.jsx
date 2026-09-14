@@ -315,7 +315,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="text-[18px] font-bold text-zinc-900 leading-snug font-sans mb-10"
           >
-            Co-founder & COO at Optenary. I manage product operations, direct day-to-day engineering targets, and build high-performance web interfaces.
+            Software Engineer and Co-founder & COO at Optenary. I manage product operations, direct day-to-day engineering targets, and build high-performance web interfaces.
           </motion.p>
 
           {/* Secondary paragraphs */}
@@ -530,7 +530,7 @@ const Hero = () => {
               Hey,<br />I'm <span className="text-purpleAccent">Arjun</span>
             </h2>
             <p className="text-[20px] font-bold text-zinc-900 leading-relaxed font-sans pr-4">
-              Co-founder & COO at Optenary. I manage product operations, direct day-to-day engineering targets, and build high-performance web interfaces.
+              Software Engineer and Co-founder & COO at Optenary. I manage product operations, direct day-to-day engineering targets, and build high-performance web interfaces.
             </p>
           </div>
 
