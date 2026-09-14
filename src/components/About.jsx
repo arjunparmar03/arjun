@@ -5,7 +5,7 @@ const timelineData = [
   {
     time: 'Present',
     title: 'Co-founder & COO at Optenary',
-    description: 'Co-founded the agency, directing day-to-day operations, project coordination, and frontend system architecture.'
+    description: 'Co-founded the agency, directing day-to-day operations, project coordination, and software system architecture.'
   },
   {
     time: '2026 - Present',

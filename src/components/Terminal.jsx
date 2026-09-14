@@ -35,7 +35,7 @@ const Terminal = () => {
           reply = 'Available commands: <span class="text-cyanAccent font-semibold">about</span> | <span class="text-cyanAccent font-semibold">projects</span> | <span class="text-cyanAccent font-semibold">skills</span> | <span class="text-cyanAccent font-semibold">coo</span> | <span class="text-cyanAccent font-semibold">clear</span>';
           break;
         case 'about':
-          reply = '<strong>Arjun Parmar</strong> - Frontend Developer, tech entrepreneur, and Science stream graduate from Bhavnagar, Gujarat. Co-founded <span class="text-cyanAccent font-semibold">Optenary</span> to engineer fast, responsive web systems.';
+          reply = '<strong>Arjun Parmar</strong> - Software Engineer, tech entrepreneur, and Science stream graduate from Bhavnagar, Gujarat. Co-founded <span class="text-cyanAccent font-semibold">Optenary</span> to engineer fast, responsive web systems.';
           break;
         case 'projects':
           reply = 'Featured Work:<br/>• <strong>Model School Manvad Website</strong> - Built with React, Supabase DB. Live: <a href="https://modelschoolmanvad.vercel.app" target="_blank" rel="noreferrer" class="text-cyanAccent underline hover:text-white">modelschoolmanvad.vercel.app</a><br/>• <strong>Optenary Agency Portal</strong> - Managed operations. Live: <a href="https://optenary.tech" target="_blank" rel="noreferrer" class="text-cyanAccent underline hover:text-white">optenary.tech</a>';

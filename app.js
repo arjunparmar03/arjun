@@ -1,5 +1,5 @@
 /**
- * Arjun's Developer Portfolio - Main Application Script
+ * Arjun's Software Engineer Portfolio - Main Application Script
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -79,7 +79,7 @@ function initTypingAnimation() {
 
   const roles = [
     'Co-founder & COO.',
-    'Frontend Developer.',
+    'Software Engineer.',
     '12th Science Graduate.',
     'React & Web Developer.'
   ];
@@ -386,7 +386,7 @@ function initTerminal() {
             responseLine.innerHTML = 'Available commands: <span class="terminal-cmd">about</span> | <span class="terminal-cmd">projects</span> | <span class="terminal-cmd">skills</span> | <span class="terminal-cmd">coo</span> | <span class="terminal-cmd">clear</span>';
             break;
           case 'about':
-            responseLine.innerHTML = '<strong>Arjun Parmar</strong> - Frontend Developer, tech entrepreneur, and Science stream graduate from Bhavnagar, Gujarat. Co-founded <span class="terminal-highlight">Optenary</span> to engineer fast, responsive web systems.';
+            responseLine.innerHTML = '<strong>Arjun Parmar</strong> - Software Engineer, tech entrepreneur, and Science stream graduate from Bhavnagar, Gujarat. Co-founded <span class="terminal-highlight">Optenary</span> to engineer fast, responsive web systems.';
             break;
           case 'projects':
             responseLine.innerHTML = 'Featured Work:<br>• <strong>Model School Manvad Website</strong> - Built with React, Supabase DB. Live: <a href="https://modelschoolmanvad.vercel.app" target="_blank" class="terminal-link">modelschoolmanvad.vercel.app</a><br>• <strong>Optenary Agency Portal</strong> - Managed operations. Live: <a href="https://optenary.tech" target="_blank" class="terminal-link">optenary.tech</a>';
@@ -435,3 +435,4 @@ function initPreloader() {
     }, 600);
   }, 1000);
 }
+
