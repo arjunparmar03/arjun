@@ -281,7 +281,9 @@ const Skills = () => {
                       {typeof skill.logo === 'string' ? (
                         <img 
                           src={skill.logo} 
-                          alt={skill.name} 
+                          alt={`${skill.name} logo`} 
+                          loading="lazy"
+                          decoding="async"
                           className="w-5 h-5 object-contain filter group-hover/item:scale-110 transition-transform duration-300"
                         />
                       ) : (

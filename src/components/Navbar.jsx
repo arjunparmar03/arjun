@@ -125,8 +125,7 @@ const Navbar = () => {
           <motion.button
             animate={{ rotate: isOpen ? 90 : 0 }}
             transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-            onClick={() => setIsOpen(!isOpen)}
-            className="w-11 h-11 rounded-xl bg-[#FCFBF9] text-black flex items-center justify-center hover:bg-[#EAE9E4] transition-colors duration-200 shadow-sm cursor-pointer relative overflow-hidden select-none flex-shrink-0"
+            onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"} className="w-11 h-11 rounded-xl bg-[#FCFBF9] text-black flex items-center justify-center hover:bg-[#EAE9E4] transition-colors duration-200 shadow-sm cursor-pointer relative overflow-hidden select-none flex-shrink-0"
           >
             {/* Three Dots */}
             <motion.div
@@ -171,8 +170,9 @@ const Navbar = () => {
           className="overflow-hidden flex flex-col items-start gap-3 w-full"
         >
           {navItems.map((item, i) => (
-            <motion.button
+            <motion.a
               key={item.id}
+              href={`#${item.id}`}
               animate={{
                 opacity: isOpen ? 1 : 0,
                 y: isOpen ? 0 : -8,
@@ -183,17 +183,20 @@ const Navbar = () => {
                 duration: isOpen ? 0.2 : 0.08,
                 ease: 'easeOut',
               }}
-              onClick={() => handleNavClick(item.id)}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(item.id);
+              }}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              className={`px-6 py-2.5 rounded-xl text-[14px] font-extrabold tracking-tight shadow-sm cursor-pointer select-none text-left w-fit transition-colors duration-200 ${
+              className={`px-6 py-2.5 rounded-xl text-[14px] font-extrabold tracking-tight shadow-sm cursor-pointer select-none text-left w-fit transition-colors duration-200 block ${
                 activeTab === item.id
                   ? 'bg-white text-black ring-2 ring-white/10'
                   : 'bg-white/95 text-black hover:bg-white'
               }`}
             >
               {item.label === 'About' ? 'About Me' : item.label}
-            </motion.button>
+            </motion.a>
           ))}
         </motion.div>
       </motion.div>

@@ -257,15 +257,16 @@ const Hero = () => {
           {/* Title: SOFTWARE ENGINEER stacked */}
           <div className="text-center w-full mb-6 z-10">
             <h1 className="relative font-syne font-extrabold text-[9vw] text-[#0D0D0D] antialiased tracking-tighter leading-none select-none uppercase flex flex-col items-center gap-2">
+              <span className="sr-only">Arjun Parmar — Software Engineer</span>
               {/* Star decoration - left of SOFTWARE */}
-              <span className="relative inline-flex items-center text-[#0D0D0D]">
+              <span aria-hidden="true" className="relative inline-flex items-center text-[#0D0D0D]">
                 <span className="absolute -left-[8vw] -top-[1.5vw] w-[7vw] h-[7vw] select-none flex items-center justify-center pointer-events-auto">
                   <ChromeStar />
                 </span>
                 SOFTWARE
               </span>
               {/* Lightning decoration - right of ENGINEER */}
-              <span className="relative inline-flex items-center mt-1 text-[#0D0D0D]">
+              <span aria-hidden="true" className="relative inline-flex items-center mt-1 text-[#0D0D0D]">
                 ENGINEER
                 <span className="absolute -right-[8vw] bottom-[0vw] w-[7vw] h-[7vw] select-none flex items-center justify-center pointer-events-auto">
                   <ChromeLightning />
@@ -281,7 +282,7 @@ const Hero = () => {
           >
             <img
               src="assets/developer_avatar.png?v=3"
-              alt="Arjun Parmar"
+              alt="Portrait of Arjun Parmar, Software Engineer"
               className="object-cover object-top pointer-events-none select-none w-full h-full"
             />
           </div>
@@ -394,19 +395,22 @@ const Hero = () => {
       <div className="sticky top-0 h-screen w-full overflow-hidden z-30 pointer-events-none flex flex-col items-center justify-center">
 
         {/* TEXT LAYER */}
-        <motion.div
+        <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           style={{ opacity: textOpacity }}
-          className="absolute inset-0 flex flex-col justify-between items-center w-full h-full pointer-events-none z-40 py-20"
+          className="absolute inset-0 flex flex-col justify-between items-center w-full h-full pointer-events-none z-40 py-20 font-normal"
         >
+          <span className="sr-only">Arjun Parmar — Software Engineer</span>
+
           {/* Line 1: SOFTWARE */}
-          <motion.div
+          <motion.span
+            aria-hidden="true"
             style={{ y: textLine1Y }}
             className="absolute top-[34%] -translate-y-1/2 left-0 w-full text-center flex justify-center items-center"
           >
-            <motion.h1
+            <motion.span
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
@@ -417,15 +421,16 @@ const Hero = () => {
                 <ChromeStar />
               </div>
               SOFTWARE
-            </motion.h1>
-          </motion.div>
+            </motion.span>
+          </motion.span>
 
           {/* Line 2: ENGINEER */}
-          <motion.div
+          <motion.span
+            aria-hidden="true"
             style={{ y: textLine2Y }}
             className="absolute bottom-[34%] translate-y-1/2 left-0 w-full text-center flex justify-center items-center"
           >
-            <motion.h1
+            <motion.span
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -436,9 +441,9 @@ const Hero = () => {
               <div className="absolute -right-[8vw] bottom-[1vw] w-[7.5vw] h-[7.5vw] select-none flex items-center justify-center pointer-events-auto">
                 <ChromeLightning />
               </div>
-            </motion.h1>
-          </motion.div>
-        </motion.div>
+            </motion.span>
+          </motion.span>
+        </motion.h1>
 
         {/* METADATA CORNERS (Section 1 Footer) */}
         <motion.div
@@ -483,7 +488,7 @@ const Hero = () => {
           >
             <motion.img
               src="assets/developer_avatar.png?v=3"
-              alt="Arjun Parmar"
+              alt="Portrait of Arjun Parmar, Software Engineer"
               style={{ filter: photoFilter }}
               className="object-cover object-top pointer-events-none select-none w-full h-full"
             />
@@ -504,7 +509,7 @@ const Hero = () => {
           >
             <img
               src="assets/developer_avatar.png?v=3"
-              alt="Arjun Parmar"
+              alt="Portrait of Arjun Parmar, Software Engineer"
               className="object-cover object-top pointer-events-none select-none w-full h-full"
             />
           </div>

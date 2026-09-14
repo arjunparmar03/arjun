@@ -52,10 +52,7 @@ const Projects = () => {
             </h2>
           </div>
           <a 
-            href="https://github.com/arjunparmar03" 
-            target="_blank" 
-            rel="noreferrer"
-            className="px-5 py-2.5 rounded-full border border-zinc-200 bg-white text-black font-semibold hover:bg-zinc-50 transition-all text-sm flex items-center gap-2 cursor-pointer w-fit h-fit select-none font-sans"
+            href="https://github.com/arjunparmar03" target="_blank" rel="noreferrer" aria-label="View all projects on GitHub" className="px-5 py-2.5 rounded-full border border-zinc-200 bg-white text-black font-semibold hover:bg-zinc-50 transition-all text-sm flex items-center gap-2 cursor-pointer w-fit h-fit select-none font-sans"
           >
             View All Work <i className="fa-solid fa-arrow-up-right text-xs" />
           </a>
@@ -100,13 +97,16 @@ const Projects = () => {
                   href={project.live}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={`View live website for ${project.title}`}
                   whileHover={{ y: -6 }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   className="rounded-2xl overflow-hidden cursor-pointer shadow-[0_12px_30px_rgba(0,0,0,0.06)] border border-zinc-200/60 group w-full block bg-white"
                 >
                   <img 
                     src={project.image} 
-                    alt={project.title}
+                    alt={`${project.title} - Project preview screenshot`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02] select-none pointer-events-none"
                   />
                 </motion.a>
@@ -114,14 +114,16 @@ const Projects = () => {
                 {/* Project Details (Outside the card mockup) */}
                 <div className="text-left mt-6 space-y-2">
                   <div className="flex items-center justify-between gap-4">
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
-                      rel="noreferrer"
-                      className="text-2xl font-extrabold text-[#0D0D0D] font-sans tracking-tight hover:text-purpleAccent transition-colors duration-300 leading-tight"
-                    >
-                      {project.title}
-                    </a>
+                    <h3 className="text-2xl font-extrabold text-[#0D0D0D] font-sans tracking-tight leading-tight">
+                      <a 
+                        href={project.live} 
+                        target="_blank" 
+                        rel="noreferrer"
+                        className="hover:text-purpleAccent transition-colors duration-300"
+                      >
+                        {project.title}
+                      </a>
+                    </h3>
                   </div>
                   
                   {/* Technology tag */}

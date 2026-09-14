@@ -78,13 +78,14 @@ const Footer = () => {
               </span>
               <div className="flex flex-wrap gap-2.5 max-w-sm">
                 {links.map((link) => (
-                  <button
+                  <a
                     key={link.id}
+                    href={`#${link.id}`}
                     onClick={(e) => handleLinkClick(link.id, e)}
-                    className="px-4 py-2 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-sm text-xs cursor-pointer select-none font-sans"
+                    className="px-4 py-2 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-sm text-xs cursor-pointer select-none font-sans inline-block"
                   >
                     {link.label}
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>
@@ -142,18 +143,12 @@ const Footer = () => {
                 </span>
                 <div className="flex items-center gap-3">
                   <a
-                    href="https://github.com/arjunparmar03"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/10 flex items-center justify-center text-white transition-all duration-300 text-xs"
+                    href="https://github.com/arjunparmar03" target="_blank" rel="noreferrer" aria-label="Arjun Parmar GitHub Profile" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/10 flex items-center justify-center text-white transition-all duration-300 text-xs"
                   >
                     <i className="fa-brands fa-github text-sm" />
                   </a>
                   <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/10 flex items-center justify-center text-white transition-all duration-300 text-xs"
+                    href="https://www.linkedin.com/in/arjun-parmar-201730431" target="_blank" rel="noreferrer" aria-label="Arjun Parmar LinkedIn Profile" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/10 flex items-center justify-center text-white transition-all duration-300 text-xs"
                   >
                     <i className="fa-brands fa-linkedin-in text-sm" />
                   </a>
@@ -216,13 +211,14 @@ const Footer = () => {
                 </span>
                 <div className="flex flex-wrap gap-3 max-w-sm">
                   {links.map((link) => (
-                    <button
+                    <a
                       key={link.id}
+                      href={`#${link.id}`}
                       onClick={(e) => handleLinkClick(link.id, e)}
-                      className="px-5 py-2.5 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-sm text-sm cursor-pointer select-none font-sans"
+                      className="px-5 py-2.5 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors shadow-sm text-sm cursor-pointer select-none font-sans inline-block"
                     >
                       {link.label}
-                    </button>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -280,18 +276,12 @@ const Footer = () => {
                   </span>
                   <div className="flex items-center gap-3">
                     <a
-                      href="https://github.com/arjunparmar03"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="w-9 h-9 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/10 flex items-center justify-center text-white transition-all duration-300 text-sm"
+                      href="https://github.com/arjunparmar03" target="_blank" rel="noreferrer" aria-label="Arjun Parmar GitHub Profile" className="w-9 h-9 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/10 flex items-center justify-center text-white transition-all duration-300 text-sm"
                     >
                       <i className="fa-brands fa-github" />
                     </a>
                     <a
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="w-9 h-9 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/10 flex items-center justify-center text-white transition-all duration-300 text-sm"
+                      href="https://www.linkedin.com/in/arjun-parmar-201730431" target="_blank" rel="noreferrer" aria-label="Arjun Parmar LinkedIn Profile" className="w-9 h-9 rounded-full bg-white/10 hover:bg-white hover:text-black border border-white/10 flex items-center justify-center text-white transition-all duration-300 text-sm"
                     >
                       <i className="fa-brands fa-linkedin-in" />
                     </a>

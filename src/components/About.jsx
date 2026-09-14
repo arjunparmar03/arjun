@@ -221,9 +221,9 @@ const About = () => {
                           {item.time}
                         </span>
                       </div>
-                      <h4 className="text-xl font-bold text-charcoal font-sans tracking-tight mb-2">
+                      <h3 className="text-xl font-bold text-charcoal font-sans tracking-tight mb-2">
                         {item.title}
-                      </h4>
+                      </h3>
                       <p className="text-zinc-500 text-sm md:text-base leading-relaxed font-sans">
                         {item.description}
                       </p>
